@@ -217,7 +217,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View v){
         String url = (et.getText().toString());
-        if(!url.contains("http://")) url = "http://" + url;
+        if(!url.contains("http://") && !url.contains("https://")) {
+            url = "http://" + url;
+        }
         webView.loadUrl(url);
     }
 }
